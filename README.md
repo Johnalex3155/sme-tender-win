@@ -16,30 +16,54 @@ SME Tender-Win is an AI-powered procurement agent designed to democratize govern
 - **Intelligence**: Local LLMs via Ollama (e.g., Gemma 4)
 - **Language**: Python 3.11+
 
+
 ## 🚀 Getting Started
 
-### Prerequisites
-- Python 3.11+
-- A running Ollama instance (Local or Cloud)
-- Serper.dev API Key
+### 🛠️ Prerequisites
+Before running the app, ensure you have the following installed:
+- **Python 3.11+**
+- **Docker & Docker Compose** (Required to run Firecrawl locally)
+- **Ollama** (For local LLM execution)
+- **Serper.dev API Key** (For Google Search discovery)
 
-### Installation
-1. Clone the repository:
+### 📦 Service Setup
+
+#### 1. Install & Run Firecrawl (Self-Hosted)
+The agent requires a Firecrawl instance to scrape government portals.
+```bash
+# Clone the Firecrawl repository
+git clone https://github.com/mendableai/firecrawl.git
+cd firecrawl
+
+# Start the services using Docker
+docker compose up -d
+```
+*The instance will be available at `http://localhost:3002` by default.*
+
+#### 2. Setup Ollama
+Install Ollama from [ollama.com](https://ollama.com) and pull the required model:
+```bash
+ollama pull gemma4:31b
+```
+*If running in a VM, ensure `OLLAMA_HOST=0.0.0.0` is set to allow external connections.*
+
+### 💻 Application Installation
+
+1. **Clone the Repository**:
    ```bash
    git clone https://github.com/[your-username]/sme-tender-win.git
    cd sme-tender-win
    ```
 
-2. Install dependencies:
+2. **Install Dependencies**:
    ```bash
    pip install -r requirements.txt
    ```
 
-3. Run the application:
+3. **Run the App**:
    ```bash
    streamlit run src/app.py
    ```
-
 ## ⚙️ Configuration
 In the sidebar, you can:
 - Configure your **SME Profile** (capabilities, niche, etc.).
