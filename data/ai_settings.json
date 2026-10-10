@@ -1,0 +1,1 @@
+{"url": "https://ollama.com/api/chat", "api_key": "FileNotFoundError: [Errno 2] No such file or directory: 'data/ai_settings.json' Traceback:  File \"/home/shady/sme_tender_win/src/app.py\", line 88, in <module>     with open(\"data/ai_settings.json\", \"w\") as f:", "model": "gemma4:31b"}
